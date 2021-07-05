@@ -1,6 +1,10 @@
 const readXlsxFile = require('read-excel-file/node');
 const path = require('path');
 
+const extractBiaisedRecords = (rows) => {
+    return rows;
+}
+
 // home
 module.exports.home = (req, res)=>{
 
@@ -11,8 +15,9 @@ module.exports.home = (req, res)=>{
 module.exports.getAll = (req, res)=>{
     readXlsxFile('./data/data.xlsx').then((rows)=>{
         // implement the algorithm
-
-        res.render('all');
+        const biaisedRecords = extractBiaisedRecords(rows);
+        console.table(biaisedRecords);
+        res.render('all', {records :biaisedRecords });
     })
     
 }
@@ -20,9 +25,9 @@ module.exports.getAll = (req, res)=>{
 // get records by province
 module.exports.getByProvince = (req, res)=>{
     const province = req.params.province;
-    console.log('provincia:', province);
+
     readXlsxFile('./data/data.xlsx').then((rows) =>{
-        //console.log(rows[4][0]);
+
         res.render('provinces');
     })
 }
@@ -30,9 +35,9 @@ module.exports.getByProvince = (req, res)=>{
 // get records by district
 module.exports.getByDistrict = (req, res)=>{
     const district = req.params.district;
-    console.log('distrito:', district);
+
     readXlsxFile('./data/data.xlsx').then((rows) =>{
-        //console.log(rows[4][0]);
+
         res.render('districts');
     })
 }

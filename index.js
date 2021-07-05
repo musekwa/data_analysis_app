@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const bodyParser = require('body-parser');
 const ejs = require('ejs');
 const { home, getAll, getByProvince, getByDistrict } = require('./controllers/controllers')
@@ -13,11 +14,11 @@ app.use(bodyParser.urlencoded({ extended: true}));
 
 app.get('/', home)
 
-app.get('/provinces', getAll);
+app.get('/all', getAll);
 
-app.get('/provinces/:province', getByProvince);
+app.get('/provinces', getByProvince);
 
-app.get('/provinces/:province/:district', getByDistrict);
+app.get('/districts', getByDistrict);
 
 
 app.listen(port, ()=>console.log(`Running on port ${port}`));

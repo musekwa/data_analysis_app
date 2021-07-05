@@ -12,11 +12,14 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "express-fileupload": "^1.2.1",
+    "express-minify": "^1.0.0",
     "handlebars": "^4.7.7",
-    "read-excel-file": "^5.2.4"
+    "read-excel-file": "^5.2.4",
+    "webpack": "^5.42.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.9"
