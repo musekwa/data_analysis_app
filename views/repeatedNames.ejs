@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('layouts/header'); -%>
+    <body>
+        <div class="d-flex" id="wrapper">
+            <!-- Sidebar-->
+            <%- include('layouts/sidebar'); -%>
+            <!-- Page content wrapper-->
+            <div id="page-content-wrapper">
+                <!-- Top navigation-->
+                <%- include('layouts/navbar'); -%>
+                <!-- Form -->
+                <%- include('layouts/form'); -%>
+                <!-- Page content-->
+                <div class="container-fluid text-left">
+                    <% farmersData.forEach(function(element){ %>
+                    <% if (element.farmers.length > 0) { %>
+                      <br>
+                      <table class="table">
+                        <h5 class="text-center fw-bold ">Distrito de <%= element.district  %><br>(<%= element.farmers.length %> casos de repetições)</h5>
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nomes</th>
+                            <th scope="col"># de repetições</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <% element.farmers.forEach(function(farmer, index) { %>
+                          <tr>
+                            <th scope="row"><%= index+1 %></th>
+                            <td><%= farmer.name %></td>
+                            <td> <span class="badge bg-danger rounded-pill"><%= farmer.counter %></span></td>
+                          </tr>
+                          <% }); %>
+                        </tbody>
+                      </table>
+                      <% } %>
+                      <% }); %>
+                </div>
+            </div>
+        </div>
+        <%- include('layouts/scripts'); -%>
+    </body>
+</html>

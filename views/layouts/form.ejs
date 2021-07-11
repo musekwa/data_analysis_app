@@ -1,0 +1,21 @@
+<form class="row row-cols-lg-auto g-3 align-items-center" action="/filter" method="POST">
+    <div class="col-md-5">
+        <select class="form-select" id="parameter1" name="parameter1">
+          <option>Escolher a província</option>
+          <option value="cabo-delgado" >Cabo Delgado</option>
+          <option value="nampula" >Nampula</option>
+          <option value="zambezia" >Zambezia</option>
+        </select>
+    </div>
+    <div class="col-md-5">
+      <select class="form-select" id="parameter2" name="parameter2">
+        <option>Visualizar...</option>
+        <option value="nomes-repetidos">Nomes Repetidos</option>
+       <!-- <option value="nomes-duvidosos">Nomes Duvidosos</option> -->
+       </select>
+    </div>
+  
+    <div class="col-md-2 d-grid">
+      <button type="submit" class="btn btn-secondary ">Filtrar</button>
+    </div>
+  </form>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('layouts/header'); -%>
+    <body>
+        <div class="d-flex" id="wrapper">
+            <!-- Sidebar-->
+            <%- include('layouts/sidebar'); -%>
+            <!-- Page content wrapper-->
+            <div id="page-content-wrapper">
+                <!-- Top navigation-->
+                <%- include('layouts/navbar'); -%>
+                <div id="page-content-wrapper">
+                    <!-- Page content-->
+                    <div class="container-fluid mb-2">
+                        <h4 class="mt-4 text-center mt-2">Visualizar Dados Enviesados</h4>
+                        <hr>
+                        <div class="text-center mt-2">
+                            <form action="">
+                                <button class="btn btn-secondary">Carregar Ficheiro Excel</button>
+                            </form>
+                        </div>
+                    </div>
+                    <p class="text-center">Ou</p>
+                    <!-- Form -->
+                    <%- include('layouts/form'); -%>
+                </div>
+                 <!-- Page content-->
+                <div class="container-fluid text-center">
+                     <div class="alert alert-danger mt-2" role="alert">
+                       Escolha uma categoria de dados que pretende visualizar!
+                      </div>
+                      <div class="alert alert-danger mt-2" role="alert">
+                        Escolha a visualização da sua categoria por distrito ou por província!
+                      </div>
+                </div>
+            </div>
+        </div>
+        <%- include('layouts/scripts'); -%>
+    </body>
+</html>
